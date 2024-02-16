@@ -4,31 +4,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import NavLink from "./NavLink";
-
-const links = [
-  { url: "/", title: "Home" },
-  { url: "/about", title: "About" },
-  { url: "/portfolio", title: "Portfolio" },
-  { url: "/contact", title: "Contact" },
-];
-
-const socialLinks = [
-  { url: "https://github.com/Faristp7", image: "/github.png" },
-  { url: "https://www.instagram.com/faris_tp_", image: "/instagram.png" },
-  { url: "https://www.linkedin.com/in/faris-tp", image: "/linkedin.png" },
-  { url: "https://medium.com/@faristp", image: "/medium.png" },
-];
+import { motion } from "framer-motion";
+import { links, socialLinks } from "@/Data/Data";
 
 export default function Navbar() {
   const [open, setOpen] = useState<boolean>(false);
+
+  
   return (
-    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
       <div className="hidden md:flex gap-4 w-1/3">
         {links.map((link) => (
-          <NavLink link={link} key={link.title}/>
+          <NavLink link={link} key={link.title} />
         ))}
       </div>
-      <div className="md:hidden lg:flex w-1/3 justify-center">
+      <div className="md:hidden lg:flex xl:w-1/3 xl:justify-center">
         <Link
           href="/"
           className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
@@ -42,7 +32,7 @@ export default function Navbar() {
       <div className="hidden md:flex gap-4 w-1/3 justify-center">
         {socialLinks.map((item) => (
           <Link href={item.url} target="_blank" key={item.image}>
-            <Image src={item.image} alt="GitHub" width={24} height={24} />
+            <Image src={item.image} alt="Social" width={30} height={24} />
           </Link>
         ))}
       </div>
@@ -51,9 +41,9 @@ export default function Navbar() {
           className="w-10 h-8 flex flex-col justify-between z-50 relative"
           onClick={() => setOpen(!open)}
         >
-          <div className="w-10 h-1 bg-white rounded"></div>
-          <div className="w-10 h-1 bg-white rounded"></div>
-          <div className="w-10 h-1 bg-white rounded"></div>
+          <motion.div className="w-10 h-1 bg-black rounded"></motion.div>
+          <motion.div className="w-10 h-1 bg-black rounded"></motion.div>
+          <motion.div className="w-10 h-1 bg-black rounded"></motion.div>
         </button>
         {open && (
           <div className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl">
