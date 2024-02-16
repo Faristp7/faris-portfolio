@@ -46,7 +46,7 @@ export default function Navbar() {
     opened: {
       x: 0,
       transition: {
-        when:"beforeChildren",
+        when: "beforeChildren",
         staggerChildren: 0.2,
       },
     },
