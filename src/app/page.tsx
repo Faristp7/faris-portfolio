@@ -17,7 +17,7 @@ export default function Home() {
         </div>
         <div className="h-1/2 lg:h-full flex flex-col gap-8 items-center justify-center">
           <h1 className="text-4xl md:text-6xl font-bold">
-            MERN Stack Developer Code Artisan
+            Mern Stack Developer, Code Artisan
           </h1>
           <p className="md:text-xl">
             Dedicated to mastering MERN stack development, based in India, with
