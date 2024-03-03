@@ -3,9 +3,6 @@
 import { motion } from "framer-motion";
 import { useRef, useState, MutableRefObject } from "react";
 import emailjs from "@emailjs/browser";
-import { ring } from "ldrs";
-
-ring.register();
 
 export default function Contact() {
   const [success, setSuccess] = useState<boolean>(false);
@@ -99,13 +96,7 @@ export default function Contact() {
           <span>Regards</span>
           <button className="rounded font-semibold bg-black text-gray-300 p-2 flex gap-1 justify-center">
             {loading ? (
-              <l-ring
-                size="25"
-                stroke="3"
-                bg-opacity="0"
-                speed="2"
-                color="white"
-              ></l-ring>
+              <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white"></div>
             ) : (
               "Send"
             )}
