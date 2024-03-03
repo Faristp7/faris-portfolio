@@ -1,18 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef, useState , MutableRefObject } from "react";
+import { useRef, useState, MutableRefObject } from "react";
 import emailjs from "@emailjs/browser";
+import { ring } from "ldrs";
+
+ring.register();
 
 export default function Contact() {
   const [success, setSuccess] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+
   const text: string = "Say Hello";
 
-  const form: MutableRefObject<HTMLFormElement | null> = useRef<HTMLFormElement>(null);
+  const form: MutableRefObject<HTMLFormElement | null> =
+    useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: any) => {
     e.preventDefault();
+    setLoading(true);
     setError(false);
     setSuccess(false);
 
@@ -26,7 +33,7 @@ export default function Contact() {
 
     if (!serviceId || !templateId || !publicKey) {
       console.log("es");
-      
+
       setError(true);
       return;
     }
@@ -38,9 +45,11 @@ export default function Contact() {
       .then(
         () => {
           setSuccess(true);
+          setLoading(false);
           form.current!.reset();
         },
         (error: any) => {
+          setLoading(false);
           setError(true);
         }
       );
@@ -90,8 +99,18 @@ export default function Contact() {
             className="bg-transparent border-b-2 border-b-black outline-none "
           />
           <span>Regards</span>
-          <button className="rounded font-semibold bg-black text-gray-300 p-2">
-            Send
+          <button className="rounded font-semibold bg-black text-gray-300 p-2 flex gap-1 justify-center">
+            {loading ? (
+              <l-ring
+                size="25"
+                stroke="3"
+                bg-opacity="0"
+                speed="2"
+                color="white"
+              ></l-ring>
+            ) : (
+              "Send"
+            )}
           </button>
           {success && (
             <span className="bg-green-600 font-semibold">
