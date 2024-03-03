@@ -70,7 +70,7 @@ export default function Navbar() {
           <NavLink link={link} key={link.title} />
         ))}
       </div>
-      <div className="md:hidden lg:flex xl:w-1/3 xl:justify-center">
+      <div className="md:hidden ">
         <Link
           href="/"
           className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
