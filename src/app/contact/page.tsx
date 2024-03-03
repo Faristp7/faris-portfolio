@@ -32,8 +32,6 @@ export default function Contact() {
     }
 
     if (!serviceId || !templateId || !publicKey) {
-      console.log("es");
-
       setError(true);
       return;
     }
