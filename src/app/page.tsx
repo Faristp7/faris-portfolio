@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,12 +25,16 @@ export default function Home() {
             a profound enthusiasm for coding and problem-solving
           </p>
           <div className="w-full flex gap-4">
+            <Link href="/portfolio">
             <button className="p-2.5 rounded-lg ring-1 ring-black bg-black text-white">
               View My work
             </button>
+            </Link>
+            <Link href="/contact">
             <button className="p-2.5 rounded-lg ring-1 ring-black">
               Contact Me
             </button>
+            </Link>
           </div>
         </div>
       </div>
