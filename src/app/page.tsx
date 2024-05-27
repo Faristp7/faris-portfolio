@@ -14,11 +14,16 @@ export default function Home() {
     >
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         <div className="h-1/2 lg:h-full lg:w-1/2 relative">
-          <Image src="/hero.png" alt="faris" fill className="object-contain" />
+          <Image
+            src="/Farishero.png"
+            alt="faris"
+            fill
+            className="object-contain"
+          />
         </div>
         <div className="h-1/2 lg:h-full flex flex-col gap-8 items-center justify-center">
           <h1 className="text-4xl md:text-6xl font-bold">
-            Mern Stack Developer, Code Artisan
+            Hi, I&apos;m Faris, a MERN Stack Developer
           </h1>
           <p className="md:text-xl">
             Dedicated to mastering MERN stack development, based in India, with
@@ -26,14 +31,14 @@ export default function Home() {
           </p>
           <div className="w-full flex gap-4">
             <Link href="/portfolio">
-            <button className="p-2.5 rounded-lg ring-1 ring-black bg-black text-white">
-              View My work
-            </button>
+              <button className="p-2.5 rounded-lg ring-1 ring-black bg-black text-white">
+                View My work
+              </button>
             </Link>
             <Link href="/contact">
-            <button className="p-2.5 rounded-lg ring-1 ring-black">
-              Contact Me
-            </button>
+              <button className="p-2.5 rounded-lg ring-1 ring-black">
+                Contact Me
+              </button>
             </Link>
           </div>
         </div>

@@ -78,7 +78,7 @@ export default function Contact() {
         </div>
         <form
           onSubmit={sendEmail}
-          className="h-1/2 lg:h-full lg:w-1/2 rounded-xl flex flex-col gap-8 justify-center p-24"
+          className="h-1/2 lg:h-full lg:w-1/2 rounded-xl flex flex-col gap-8 justify-center p-8 sm:p-24"
           ref={form}
         >
           <span>Dear Faris </span>
