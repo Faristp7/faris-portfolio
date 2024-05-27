@@ -5,10 +5,12 @@ import Link from "next/link";
 import { useState } from "react";
 import NavLink from "./NavLink";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { links, socialLinks } from "@/Data/Data";
 
 export default function Navbar() {
   const [open, setOpen] = useState<boolean>(false);
+  const pathname = usePathname();
 
   const centerVariants = {
     closed: {
@@ -71,15 +73,17 @@ export default function Navbar() {
         ))}
       </div>
       <div className="md:hidden ">
-        <Link
-          href="/"
-          className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
-        >
-          <span className="text-white mr-1">Faris</span>
-          <span className="w-12 h-8 rounded bg-white text-black flex items-center justify-center">
-            .dev
-          </span>
-        </Link>
+        {pathname !== "/" && (
+          <Link
+            href="/"
+            className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
+          >
+            <span className="text-white mr-1">Faris</span>
+            <span className="w-12 h-8 rounded bg-white text-black flex items-center justify-center">
+              .dev
+            </span>
+          </Link>
+        )}
       </div>
       <div className="hidden md:flex gap-4 w-1/3 justify-center">
         {socialLinks.map((item) => (
