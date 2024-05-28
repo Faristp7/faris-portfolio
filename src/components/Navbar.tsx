@@ -88,7 +88,7 @@ export default function Navbar() {
       <div className="hidden md:flex gap-4 w-1/3 justify-center">
         {socialLinks.map((item) => (
           <Link href={item.url} target="_blank" key={item.image}>
-            <Image src={item.image} alt="Social" width={30} height={24} />
+            <Image src={item.image} alt="faris social media" width={30} height={24} />
           </Link>
         ))}
       </div>

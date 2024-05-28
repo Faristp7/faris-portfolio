@@ -16,7 +16,7 @@ export default function Home() {
         <div className="h-1/2 lg:h-full lg:w-1/2 relative">
           <Image
             src="/Farishero.png"
-            alt="faris"
+            alt="faris profile"
             fill
             className="object-contain"
           />

@@ -57,7 +57,7 @@ export default function About() {
             <div className="self-end ">
               <Image
                 src={"./signature.svg"}
-                alt="Faris"
+                alt="faris signature"
                 width={200}
                 height={0}
               />
