@@ -18,6 +18,19 @@ export default function About() {
   const experienceRef = useRef<HTMLDivElement>(null);
   const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
 
+  const handleScroll = (value: string) => {
+    if (value === "skills") {
+      if (skillRef.current) {
+        skillRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+      return;
+    } else {
+      if (experienceRef.current) {
+        experienceRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <motion.div
       className="h-full"
@@ -50,8 +63,10 @@ export default function About() {
               />
             </div>
             <motion.svg
+              onClick={() => handleScroll("skills")}
               initial={{ opacity: 0.2, y: 0 }}
               animate={{ opacity: 1, y: "10px" }}
+              className="cursor-pointer"
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               viewBox="0 0 24 24"
               fill="none"
@@ -97,6 +112,8 @@ export default function About() {
               ))}
             </motion.div>
             <motion.svg
+              onClick={() => handleScroll("experience")}
+              className="cursor-pointer"
               initial={{ opacity: 0.2, y: 0 }}
               animate={{ opacity: 1, y: "10px" }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
