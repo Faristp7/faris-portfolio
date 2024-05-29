@@ -58,7 +58,7 @@ export default function Contact() {
       transition={{ duration: 1 }}
     >
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-center text-6xl">
+        <div className="h-1/3 sm:h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-center text-6xl">
           <motion.div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -78,18 +78,21 @@ export default function Contact() {
         </div>
         <form
           onSubmit={sendEmail}
-          className="h-1/2 lg:h-full lg:w-1/2 rounded-xl flex flex-col gap-8 justify-center p-8 sm:p-24"
+          className="h-1/2 lg:h-full lg:w-1/2 rounded-xl flex flex-col gap-8 justify-center p-0 sm:p-24"
           ref={form}
         >
           <span>Dear Faris </span>
           <textarea
             rows={3}
             name="user_message"
-            className="bg-transparent border-b-2 border-b-black outline-none resize-none"
+            required
+            spellCheck
+            className="bg-transparent outline-dotted rounded-md outline-gray-400 resize-none p-2 z-10"
           />
           <span>My mail address is</span>
           <input
-            type="text"
+            type="email"
+            required
             name="user_email"
             className="bg-transparent border-b-2 border-b-black outline-none "
           />
@@ -102,8 +105,8 @@ export default function Contact() {
             )}
           </button>
           {success && (
-            <span className="bg-green-600 font-semibold">
-              Your message has been sent succefully
+            <span className="bg-green-600 font-semibold rounded-sm">
+              Your message has been sent successfully
             </span>
           )}
           {error && (
