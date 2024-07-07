@@ -58,7 +58,7 @@ export default function Contact() {
       transition={{ duration: 1 }}
     >
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
-        <div className="h-1/3 sm:h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-center text-6xl">
+        <div className="h-1/5 md:h-1/3 lg:h-full lg:w-1/2 flex items-center justify-center text-center text-5xl sm:text-6xl">
           <motion.div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -87,7 +87,7 @@ export default function Contact() {
             name="user_message"
             required
             spellCheck
-            className="bg-transparent outline-dotted rounded-md outline-gray-400 resize-none p-2 z-10"
+            className="bg-transparent outline rounded-md outline-gray-400 resize-none p-2 z-10"
           />
           <span>My mail address is</span>
           <input
