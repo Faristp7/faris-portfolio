@@ -65,4 +65,12 @@ export const myWorks = [
     link: "https://github.com/Faristp7/Audio",
     color: "from-blue-100 to-red-100",
   },
+  {
+    id: 3,
+    title: "Audio",
+    desc: "Audio: E-commerce site for browsing, purchasing products. User-friendly interface, secure payments. Features account creation, order tracking, filtered product views, category sorting, etc.",
+    img: "/page_icon.png",
+    link: "https://github.com/Faristp7/Audio",
+    color: "from-blue-100 to-red-100",
+  },
 ];
