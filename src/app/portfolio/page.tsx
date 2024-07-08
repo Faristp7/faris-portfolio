@@ -1,12 +1,19 @@
 "use client";
 
 import { myWorks } from "@/Data/Data";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 
 export default function Portfolio() {
+  const workRef = useRef<HTMLDivElement>(null);
+  const workRefInView = useInView(workRef);
+
+  const handleScroll = () => {
+    if (workRef.current) workRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <motion.div
       className="bg-gradient-to-r from-blue-100 to-red-100"
@@ -15,12 +22,13 @@ export default function Portfolio() {
       transition={{ duration: 1 }}
     >
       <div>
-        <div className="w-screen my-10 flex items-center justify-center text-6xl md:text-8xl text-center">
+        <div className="w-screen h-[calc(100vh-11rem)] flex items-center justify-center text-6xl md:text-8xl text-center">
           My Works
         </div>
       </div>
       <div className="flex justify-center">
         <motion.svg
+          onClick={handleScroll}
           initial={{ opacity: 0.2, y: 0 }}
           animate={{ opacity: 1, y: "10px" }}
           className="cursor-pointer"
@@ -41,11 +49,17 @@ export default function Portfolio() {
         </motion.svg>
       </div>
       {/* work section */}
-      <div className="grid my-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 px-8 md:px-20">
+      <motion.div
+        ref={workRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: workRefInView ? 1 : 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="grid py-20 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-8 md:px-20"
+      >
         {myWorks.map((work) => (
           <div
             key={work.id}
-            className="flex flex-col justify-center items-center"
+            className="flex flex-col relative justify-center items-center bg-gray-200 p-3 rounded-2xl shadow-lg"
           >
             <Image
               src={work.img}
@@ -55,11 +69,14 @@ export default function Portfolio() {
               className=""
               loading="lazy"
             />
-            <h5 className="text-lg">{work.title}</h5>
-            <p>{work.desc}</p>
+            <h5 className="text-lg font-bold py-3">{work.title}</h5>
+            <p className="text-center text-base">{work.desc}</p>
+            <div className="absolute bg-black rounded-full text-white py-3 px-2">
+              View
+            </div>
           </div>
         ))}
-      </div>
+      </motion.div>
       <div className="bg-white w-screen h-screen flex flex-col gap-4 items-center justify-center text-center">
         <h1 className="text-6xl md:text-8xl">Do you have a project?</h1>
         <div className="relative">
