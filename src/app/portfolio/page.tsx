@@ -53,28 +53,33 @@ export default function Portfolio() {
         ref={workRef}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: workRefInView ? 1 : 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
         className="grid py-20 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-8 md:px-20"
       >
         {myWorks.map((work) => (
-          <div
+          <motion.div
+            whileHover={{ scale: 1 }}
             key={work.id}
-            className="flex flex-col relative justify-center items-center bg-gray-200 p-3 rounded-2xl shadow-lg"
+            className="flex flex-col justify-center items-center bg-gray-100 p-6 rounded-2xl shadow-lg"
           >
-            <Image
-              src={work.img}
-              alt={work.title}
-              width={500}
-              height={500}
-              className=""
-              loading="lazy"
-            />
-            <h5 className="text-lg font-bold py-3">{work.title}</h5>
-            <p className="text-center text-base">{work.desc}</p>
-            <div className="absolute bg-black rounded-full text-white py-3 px-2">
-              View
+            <div className="relative border-b hover:border-gray-500 group">
+              <Image
+                src={work.img}
+                alt={work.title}
+                width={500}
+                height={500}
+                className="group-hover:opacity-20 transition-opacity duration-300"
+                loading="lazy"
+              />
+              <Link href={work.link} target="_blank">
+                <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-full text-white py-7 p-4 cursor-pointer text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  View
+                </button>
+              </Link>
             </div>
-          </div>
+            <h5 className="text-2xl font-semibold py-3">{work.title}</h5>
+            <p className="text-center text-base">{work.desc}</p>
+          </motion.div>
         ))}
       </motion.div>
       <div className="bg-white w-screen h-screen flex flex-col gap-4 items-center justify-center text-center">
