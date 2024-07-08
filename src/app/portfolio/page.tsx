@@ -22,7 +22,7 @@ export default function Portfolio() {
       transition={{ duration: 1 }}
     >
       <div>
-        <div className="w-screen h-[calc(100vh-11rem)] flex items-center justify-center text-6xl md:text-8xl text-center">
+        <div className="w-screen h-[calc(100vh-15rem)] flex items-center justify-center text-6xl md:text-8xl text-center">
           My Works
         </div>
       </div>
