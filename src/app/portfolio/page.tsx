@@ -58,16 +58,18 @@ export default function Portfolio() {
       >
         {myWorks.map((work) => (
           <motion.div
-            whileHover={{ scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: "3s" }}
             key={work.id}
-            className="flex flex-col justify-center items-center bg-gray-100 p-6 rounded-2xl shadow-lg"
+            className="flex flex-col max-w-sm justify-center items-center bg-gradient-to-b from-transparent to-gray-50 p-6 rounded-2xl shadow-md"
           >
-            <div className="relative border-b hover:border-gray-500 group">
+            <div className="relative group w-full overflow-hidden rounded-t-2xl">
               <Image
                 src={work.img}
                 alt={work.title}
+                layout="responsive"
                 width={500}
-                height={500}
+                height={300}
                 className="group-hover:opacity-20 transition-opacity duration-300"
                 loading="lazy"
               />
@@ -77,8 +79,10 @@ export default function Portfolio() {
                 </button>
               </Link>
             </div>
-            <h5 className="text-2xl font-semibold py-3">{work.title}</h5>
-            <p className="text-center text-base">{work.desc}</p>
+            <div className="text-center py-3 px-4">
+              <h5 className="text-2xl font-semibold py-2">{work.title}</h5>
+              <p className="text-base">{work.desc}</p>
+            </div>
           </motion.div>
         ))}
       </motion.div>

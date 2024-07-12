@@ -50,7 +50,15 @@ export const jobData = [
 
 export const myWorks = [
   {
-    id: 1,
+    id: 3,
+    title: "Dollar",
+    desc: "Dollar UAE offers an innovative car rental service app tailored for the vibrant city of Dubai. Our app empowers users to book, manage, and track their rentals with ease, ensuring a seamless and hassle-free experience",
+    img: "/dollar.png",
+    link: "https://www.dollaruae.com",
+    color: "from-blue-100 to-red-100",
+  },
+  {
+    id: 2,
     title: "Bizzbuddy",
     desc: "Bizzbuddy: Business social app for networking, growth. Users connect, share updates, collaborate, fostering a thriving community. Aims to empower entrepreneurs, spur business growth",
     img: "/bizzbuddy.png",
@@ -58,11 +66,11 @@ export const myWorks = [
     color: "from-blue-100 to-red-100",
   },
   {
-    id: 2,
+    id: 1,
     title: "Audio",
     desc: "Audio: E-commerce site for browsing, purchasing products. User-friendly interface, secure payments. Features account creation, order tracking, filtered product views, category sorting, etc.",
     img: "/page_icon.png",
     link: "https://github.com/Faristp7/Audio",
     color: "from-blue-100 to-red-100",
-  },
+  }
 ];
