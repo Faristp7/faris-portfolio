@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import TransitionProvider from "@/components/TransitionProvider";
 
@@ -55,7 +56,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className} suppressHydrationWarning={true}>
-        <TransitionProvider>{children}</TransitionProvider>
+        <TransitionProvider>
+          {children}
+          <SpeedInsights />
+        </TransitionProvider>
       </body>
     </html>
   );
