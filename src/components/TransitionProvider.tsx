@@ -5,13 +5,14 @@ import { AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import DownloadResume from "./DownloadResume";
 
 export default function TransitionProvider({ children }: any) {
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const pathName = usePathname();
 
   useEffect(() => {
-    setIsVisible(true)
+    setIsVisible(true);
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, 1000);
@@ -47,8 +48,9 @@ export default function TransitionProvider({ children }: any) {
           initial={{ height: "140vh" }}
           animate={{ height: "0vh", transition: { delay: 0.5 } }}
         />
-        <div className="h-24">
+        <div className="h-24 relative">
           <Navbar />
+          {pathName.startsWith("/") && <DownloadResume />}
         </div>
         <div className="h-[calc(100vh-6rem)]">{children}</div>
       </div>
