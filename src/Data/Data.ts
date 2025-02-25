@@ -21,6 +21,7 @@ export const skills = [
   "Framer motion",
   "NextJS",
   "React JS",
+  "React Query",
   "Redux",
   "NodeJS",
   "expressJS",
@@ -36,7 +37,7 @@ export const jobData = [
     jobTitle: "Full Stack Developer",
     jobDescription:
       "Joined Diffrenz as a full stack developer, contributing to team projects and collaborating with colleagues.",
-    jobDate: "2024 - Present",
+    jobDate: "2024 - 2025 Present",
     jobCompany: "Diffrenz",
   },
   {
