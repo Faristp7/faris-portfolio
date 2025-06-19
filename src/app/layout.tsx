@@ -60,7 +60,7 @@ export default function RootLayout({
         <TransitionProvider>
           {children}
           <SpeedInsights />
-          <Pointer />
+          <Pointer className="hidden lg:block"/>
         </TransitionProvider>
       </body>
     </html>
