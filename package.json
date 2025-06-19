@@ -11,10 +11,16 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@vercel/speed-insights": "^1.0.12",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.0.5",
+    "lucide-react": "^0.517.0",
+    "motion": "^12.18.1",
     "next": "^15.1.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",

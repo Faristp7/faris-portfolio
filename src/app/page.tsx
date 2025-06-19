@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { AuroraText } from "@/components/magicui/aurora-text";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
 export default function Home() {
   return (
@@ -23,23 +25,23 @@ export default function Home() {
           />
         </div>
         <div className="h-1/2 lg:h-full flex flex-col gap-8 items-center justify-center">
-          <h1 className="text-4xl md:text-6xl font-bold">
-            Hi, I&apos;m Faris, a MERN Stack Developer
+          <h1 className="text-center sm:text-left text-4xl md:text-6xl font-bold">
+            Hi, I&apos;m <AuroraText>Faris</AuroraText>, a MERN Stack Developer
           </h1>
-          <p className="md:text-xl">
+          <p className="text-center sm:text-left md:text-xl">
             Dedicated to mastering MERN stack development, based in India, with
             a profound enthusiasm for coding and problem-solving
           </p>
           <div className="w-full flex gap-4">
             <Link href="/portfolio">
-              <button className="p-2.5 rounded-lg ring-1 ring-black bg-black text-white">
+              <InteractiveHoverButton className="pr-10 bg-black text-white">
                 View My work
-              </button>
+              </InteractiveHoverButton>
             </Link>
             <Link href="/contact">
-              <button className="p-2.5 rounded-lg ring-1 ring-black">
+              <InteractiveHoverButton className="">
                 Contact Me
-              </button>
+              </InteractiveHoverButton>
             </Link>
           </div>
         </div>

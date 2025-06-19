@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import TransitionProvider from "@/components/TransitionProvider";
+import { Pointer } from "@/components/magicui/pointer";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -54,11 +55,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className={montserrat.className} suppressHydrationWarning={true}>
         <TransitionProvider>
           {children}
           <SpeedInsights />
+          <Pointer />
         </TransitionProvider>
       </body>
     </html>
