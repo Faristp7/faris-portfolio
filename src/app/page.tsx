@@ -25,10 +25,10 @@ export default function Home() {
           />
         </div>
         <div className="h-1/2 lg:h-full flex flex-col gap-8 items-center justify-center">
-          <h1 className="text-center sm:text-left text-4xl md:text-6xl font-bold">
+          <h1 className="text-center text-balance sm:text-left text-4xl md:text-6xl font-bold">
             Hi, I&apos;m <AuroraText>Faris</AuroraText>, a MERN Stack Developer
           </h1>
-          <p className="text-center sm:text-left md:text-xl">
+          <p className="text-center text-balance sm:text-left md:text-xl">
             Dedicated to mastering MERN stack development, based in India, with
             a profound enthusiasm for coding and problem-solving
           </p>
