@@ -24,7 +24,7 @@ export default function TransitionProvider({ children }: any) {
     <AnimatePresence mode="wait">
       <div
         key={pathName}
-        className="w-screen h-screen bg-gradient-to-r from-blue-100 to-red-100"
+        className="w-screen h-screen bg-gradient-to-br from-[#fafafa] to-[#eaeaea]"
       >
         <motion.div
           className="h-screen w-screen fixed bg-black rounded-b-[100px] z-40"

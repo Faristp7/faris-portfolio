@@ -16,7 +16,7 @@ export default function Portfolio() {
 
   return (
     <motion.div
-      className="bg-gradient-to-r from-blue-100 to-red-100"
+      className="bg-gradient-to-br from-[#fafafa] to-[#eaeaea]"
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}

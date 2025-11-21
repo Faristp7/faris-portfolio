@@ -17,7 +17,7 @@ export default function NavLink({
     <Link
       href={link.url}
       className={`rounded-md p-1 ${
-        pathName === link.url && "bg-black text-white"
+        pathName === link.url && "bg-black text-white shadow-[0_4px_30px_rgba(0,0,0,0.05)]"
       }`}
     >
       {link.title}
