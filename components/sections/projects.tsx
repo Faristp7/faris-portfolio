@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ProjectArchiveModal } from "../project-archive-modal";
 
 
 const projects = [
@@ -24,7 +25,7 @@ const projects = [
     title: "PVS",
     category: "Web Application",
     description: "AI-powered data visualization tool for enterprise clients to process and interpret large datasets with predictive modeling.",
-    tech: ["Next.js", "TypeScript", "Python", "TensorFlow", "AWS"],
+    tech: ["Next.js", "TypeScript", "Antd"],
     image: "/fintech_dashboard_project_mockup.png",
   }
 ];
@@ -111,9 +112,11 @@ export function Projects() {
         </div>
 
         <div className="mt-24 text-center">
-          <Button variant="outline" size="lg" className="rounded-full px-8 font-mono text-sm">
-            View Full Project Archive
-          </Button>
+          <ProjectArchiveModal>
+            <Button variant="outline" size="lg" className="rounded-full px-8 font-mono text-sm">
+              View Full Project Archive
+            </Button>
+          </ProjectArchiveModal>
         </div>
       </div>
     </section>

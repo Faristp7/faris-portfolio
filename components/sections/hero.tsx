@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, Github, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -55,7 +55,7 @@ export function Hero() {
                 {[
                   { logo: Github, href: "https://github.com/faristp7" },
                   { logo: Linkedin, href: "https://www.linkedin.com/in/faris-tp" },
-                  { logo: Twitter, href: "https://x.com/faristp07" }].map((Icon, index) => (
+                  { logo: Instagram, href: "https://www.instagram.com/faris_tp_" }].map((Icon, index) => (
                     <a
                       key={index}
                       href={Icon.href}
