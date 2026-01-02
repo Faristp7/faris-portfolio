@@ -1,19 +1,23 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80 z-10" />
-        <img
-          src={"/abstract_futuristic_dark_background_with_neon_accents.png"}
-          alt="Abstract Background"
-          className="w-full h-full object-cover opacity-40 dark:opacity-60"
-        />
+        <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/50 to-background z-10" />
+        <div className="absolute inset-0 bg-linear-to-r from-background/80 via-transparent to-background/80 z-10" />
+        <div className="relative w-full h-full">
+          <Image
+            src="/abstract_futuristic_dark_background_with_neon_accents.png"
+            alt="Abstract Background"
+            fill
+            className="object-cover opacity-40 dark:opacity-60"
+          />
+        </div>
       </div>
 
       {/* Content */}
@@ -79,7 +83,7 @@ export function Hero() {
         animate={{ opacity: 1, y: [0, 10, 0] }}
         transition={{ delay: 1, duration: 2, repeat: Infinity }}
       >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-foreground/20 to-foreground"></div>
+        <div className="w-px h-12 bg-linear-to-b from-transparent via-foreground/20 to-foreground"></div>
         <span>Scroll</span>
       </motion.div>
     </section>

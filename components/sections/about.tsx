@@ -55,13 +55,13 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative z-10 rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+            <div className="relative z-10 rounded-2xl overflow-hidden border border-white/10 bg-linear-to-br from-white/5 to-white/0 backdrop-blur-sm shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
               <img
                 src={"/chatGptHeroImg.png"}
                 alt="Developer Avatar"
-                className="w-full h-auto object-cover bg-gradient-to-b from-accent/10 to-background"
+                className="w-full h-auto object-cover bg-linear-to-b from-accent/10 to-background"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-black/80 to-transparent text-white">
                 <p className="font-mono text-xs opacity-70 mb-1">CURRENTLY WORKING AT</p>
                 <p className="font-display font-bold text-lg">Accore Labs</p>
               </div>
