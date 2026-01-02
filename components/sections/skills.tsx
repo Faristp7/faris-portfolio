@@ -21,7 +21,7 @@ const skills = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 bg-secondary/30 border-y border-border/50">
+    <section id="skills" className="py-24 bg-red-300 bg-secondary/30 border-y border-border/50">
       <div className="container px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
