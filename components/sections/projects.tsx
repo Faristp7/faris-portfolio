@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectArchiveModal } from "../project-archive-modal";
+import Link from "next/link";
 
 
 const projects = [
@@ -99,9 +100,11 @@ export function Projects() {
 
                   {
                     project.link && (
-                      <Button className="gap-2 cursor-pointer" onClick={() => window.open(project.link, "_blank")}>
-                        <ExternalLink className="w-4 h-4" />
-                        Live Demo
+                      <Button asChild className="gap-2 cursor-pointer">
+                        <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4" />
+                          Live Demo
+                        </Link>
                       </Button>
                     )
                   }
