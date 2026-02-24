@@ -16,6 +16,20 @@ interface Project {
 
 const archiveProjects: Project[] = [
     {
+        year: "2026",
+        title: "pazhayidom",
+        madeAt: "Freelance",
+        builtWith: ["Next.js", "TypeScript", "Framer motion"],
+        link: "https://pazhayidom.com",
+    },
+    {
+        year: "2026",
+        title: "builtii",
+        madeAt: "Freelance",
+        builtWith: ["Next.js", "TypeScript", "Framer motion"],
+        link: "https://builtii.ftslab.in",
+    },
+    {
         year: "2025",
         title: "PVS",
         madeAt: "Diffrenz Solutions",
