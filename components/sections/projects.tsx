@@ -41,10 +41,10 @@ export function Projects() {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <h2 className="text-sm font-mono text-accent tracking-widest uppercase mb-4">03. Selected Work</h2>
-          <h3 className="text-3xl md:text-4xl font-display font-bold">
+          <p className="text-sm font-mono text-accent tracking-widest uppercase mb-4">03. Selected Work</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold">
             Featured Projects
-          </h3>
+          </h2>
         </motion.div>
 
         <div className="space-y-32">
@@ -73,7 +73,7 @@ export function Projects() {
               {/* Content Side */}
               <div className="w-full lg:w-2/5 flex flex-col items-start">
                 <span className="text-accent font-mono text-sm mb-4">{project.category}</span>
-                <h4 className="text-3xl md:text-4xl font-display font-bold mb-6 group-hover:text-accent transition-colors">{project.title}</h4>
+                <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 group-hover:text-accent transition-colors">{project.title}</h3>
 
                 <div className="p-6 bg-card border border-border rounded-xl shadow-sm mb-8 relative z-20 lg:-ml-12 lg:w-[110%]">
                   <p className="text-muted-foreground leading-relaxed">

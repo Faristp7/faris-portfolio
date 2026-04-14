@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Instagram, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, Download, Github, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -53,6 +54,22 @@ export function Hero() {
               >
                 View Projects
                 <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="h-14 px-8 text-lg rounded-full hover:-translate-y-1 transition-transform"
+              >
+                <Link
+                  href="https://drive.google.com/uc?export=download&id=1-dE8gPUAiaIsb_1ygmgoK73w4oNzRYu4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Resume
+                </Link>
               </Button>
 
               <div className="flex items-center gap-4 sm:ml-4">

@@ -21,10 +21,10 @@ export function Contact() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-sm font-mono text-accent tracking-widest uppercase mb-4">05. What's Next?</h2>
-          <h3 className="text-5xl md:text-7xl font-display font-bold mb-8">
+          <p className="text-sm font-mono text-accent tracking-widest uppercase mb-4">06. What's Next?</p>
+          <h2 className="text-5xl md:text-7xl font-display font-bold mb-8">
             Let's work together.
-          </h3>
+          </h2>
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
             I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
           </p>

@@ -18,11 +18,11 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-sm font-mono text-accent tracking-widest uppercase mb-4">01. About Me</h2>
-            <h3 className="text-3xl md:text-4xl font-display font-bold mb-6">
+            <p className="text-sm font-mono text-accent tracking-widest uppercase mb-4">01. About Me</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
               More than just code. <br />
               <span className="text-muted-foreground">I design solutions.</span>
-            </h3>
+            </h2>
 
             <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
               <p>

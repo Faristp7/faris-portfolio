@@ -22,21 +22,57 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Faris | Full Stack Developer",
-  description: "Portfolio of Faris, a passionate Full Stack Developer crafting beautiful and functional digital experiences.",
-  keywords: ["Faris", "Full Stack Developer", "UI/UX Designer", "Web Developer", "React", "Next.js", "Portfolio"],
+  metadataBase: new URL("https://faris-portfolio.vercel.app"),
+  title: {
+    default: "Faris | Full Stack Developer",
+    template: "%s | Faris",
+  },
+  description:
+    "Portfolio of Faris, a Full Stack Developer based in Dubai, UAE. Specializing in React, Next.js, TypeScript, and Node.js — building fast, accessible, and beautifully crafted digital products.",
+  keywords: [
+    "Faris",
+    "Full Stack Developer",
+    "Frontend Developer",
+    "React Developer",
+    "Next.js Developer",
+    "TypeScript Developer",
+    "Node.js Developer",
+    "Web Developer Dubai",
+    "Web Developer UAE",
+    "UI/UX Designer",
+    "JavaScript Developer",
+    "Software Engineer Dubai",
+    "Portfolio",
+  ],
+  authors: [{ name: "Faris", url: "https://faris-portfolio.vercel.app" }],
+  creator: "Faris",
   openGraph: {
     title: "Faris | Full Stack Developer",
-    description: "Portfolio of Faris, a passionate Full Stack Developer and UI/UX Designer crafting beautiful and functional digital experiences.",
-    url: "https://faris-portfolio.vercel.app", // Assuming a placeholder or if user provided one, but I'll use a generic one or ask. For now, I'll put a placeholder and can ask user to update.
+    description:
+      "Full Stack Developer based in Dubai, UAE. Specializing in React, Next.js, TypeScript, and Node.js — building fast, accessible digital products.",
+    url: "https://faris-portfolio.vercel.app",
     siteName: "Faris Portfolio",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Faris | Full Stack Developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Faris | Full Stack Developer",
-    description: "Portfolio of Faris, a passionate Full Stack Developer crafting beautiful and functional digital experiences.",
+    description:
+      "Full Stack Developer based in Dubai, UAE. Specializing in React, Next.js, TypeScript, and Node.js.",
+    creator: "@faristp07",
+    images: ["/opengraph-image"],
+  },
+  alternates: {
+    canonical: "/",
   },
   robots: {
     index: true,

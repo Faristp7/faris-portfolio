@@ -29,10 +29,10 @@ export function Skills() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-sm font-mono text-accent tracking-widest uppercase mb-4">02. My Arsenal</h2>
-          <h3 className="text-3xl md:text-4xl font-display font-bold">
+          <p className="text-sm font-mono text-accent tracking-widest uppercase mb-4">02. My Arsenal</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold">
             Technologies I work with
-          </h3>
+          </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -32,10 +32,10 @@ export function Experience() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="text-sm font-mono text-accent tracking-widest uppercase mb-4">04. Experience</h2>
-          <h3 className="text-3xl md:text-4xl font-display font-bold">
+          <p className="text-sm font-mono text-accent tracking-widest uppercase mb-4">04. Experience</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold">
             Where I've Worked
-          </h3>
+          </h2>
         </motion.div>
 
         <div className="relative border-l border-border ml-4 md:ml-0 space-y-12">
@@ -52,13 +52,13 @@ export function Experience() {
               <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-accent ring-4 ring-background" />
 
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                <h4 className="text-xl font-display font-bold">{exp.role}</h4>
+                <h3 className="text-xl font-display font-bold">{exp.role}</h3>
                 <span className="font-mono text-sm text-accent bg-accent/10 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0">
                   {exp.period}
                 </span>
               </div>
 
-              <h5 className="text-lg text-muted-foreground mb-4 font-medium">{exp.company}</h5>
+              <p className="text-lg text-muted-foreground mb-4 font-medium">{exp.company}</p>
 
               <p className="text-muted-foreground leading-relaxed max-w-2xl">
                 {exp.description}

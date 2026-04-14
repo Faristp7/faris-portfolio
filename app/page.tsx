@@ -6,6 +6,7 @@ import { Experience } from "@/components/sections/experience";
 import { Hero } from "@/components/sections/hero";
 import { Navbar } from "@/components/sections/navbar";
 import { Projects } from "@/components/sections/projects";
+import { Resume } from "@/components/sections/resume";
 import { Skills } from "@/components/sections/skills";
 import { useScroll, useSpring, motion } from "framer-motion";
 
@@ -32,6 +33,7 @@ export default function Home() {
         <Skills />
         <Projects />
         <Experience />
+        <Resume />
         <Contact />
       </main>
       <script
@@ -41,11 +43,38 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "Person",
             name: "Faris",
-            url: "https://faris-portfolio.vercel.app", // Placeholder, check if correct
-            jobTitle: "Frontend Developer & UI/UX Designer",
+            url: "https://faris-portfolio.vercel.app",
+            jobTitle: "Full Stack Developer",
+            description:
+              "Full Stack Developer based in Dubai, UAE, specializing in React, Next.js, TypeScript, and Node.js.",
+            knowsAbout: [
+              "React",
+              "Next.js",
+              "TypeScript",
+              "Node.js",
+              "MongoDB",
+              "PostgreSQL",
+              "Docker",
+              "AWS",
+              "UI/UX Design",
+              "Framer Motion",
+              "TanStack Query",
+            ],
+            worksFor: {
+              "@type": "Organization",
+              name: "Accore Labs",
+            },
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Dubai",
+              addressCountry: "AE",
+            },
             sameAs: [
-              // Add social links if available in future, for now empty or generic
-            ]
+              "https://github.com/faristp7",
+              "https://www.linkedin.com/in/faris-tp",
+              "https://x.com/faristp07",
+              "https://www.instagram.com/faris_tp_",
+            ],
           }),
         }}
       />
