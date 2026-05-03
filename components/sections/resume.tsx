@@ -4,9 +4,9 @@ import { Download, Eye, FileText } from "lucide-react";
 import Link from "next/link";
 
 const RESUME_VIEW_URL =
-  "https://drive.google.com/file/d/1-dE8gPUAiaIsb_1ygmgoK73w4oNzRYu4/view?usp=sharing";
+  "https://drive.google.com/file/d/1Na7SJwn_DamONSNjHhAWe6G4iHG2dBge/view?usp=sharing";
 const RESUME_DOWNLOAD_URL =
-  "https://drive.google.com/uc?export=download&id=1-dE8gPUAiaIsb_1ygmgoK73w4oNzRYu4";
+  "https://drive.google.com/uc?export=download&id=1Na7SJwn_DamONSNjHhAWe6G4iHG2dBge";
 
 const highlights = [
   { label: "Years Experience", value: "3+" },
