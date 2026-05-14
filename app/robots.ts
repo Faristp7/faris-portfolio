@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://faris-portfolio.vercel.app/sitemap.xml',
+        sitemap: 'https://faris.co.in/sitemap.xml',
     }
 }

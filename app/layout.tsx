@@ -22,7 +22,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://faris-portfolio.vercel.app"),
+  metadataBase: new URL("https://faris.co.in"),
   title: {
     default: "Faris | Full Stack Developer",
     template: "%s | Faris",
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     "Software Engineer Dubai",
     "Portfolio",
   ],
-  authors: [{ name: "Faris", url: "https://faris-portfolio.vercel.app" }],
+  authors: [{ name: "Faris", url: "https://faris.co.in" }],
   creator: "Faris",
   openGraph: {
     title: "Faris | Full Stack Developer",
     description:
       "Full Stack Developer based in Dubai, UAE. Specializing in React, Next.js, TypeScript, and Node.js — building fast, accessible digital products.",
-    url: "https://faris-portfolio.vercel.app",
+    url: "https://faris.co.in",
     siteName: "Faris Portfolio",
     locale: "en_US",
     type: "website",
