@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Mail, MessageSquare } from "lucide-react";
 import { ContactModal } from "../contact-modal";
@@ -15,7 +15,7 @@ export function Contact() {
       <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent pointer-events-none" />
 
       <div className="container px-6 md:px-12 relative z-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -41,7 +41,7 @@ export function Contact() {
               Schedule a Call
             </Button>
           </div>
-        </motion.div>
+        </m.div>
 
         <footer className="mt-32 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} Faris Dev. All rights reserved.</p>

@@ -1,14 +1,16 @@
 "use client"
 
-import { About } from "@/components/sections/about";
-import { Contact } from "@/components/sections/contact";
-import { Experience } from "@/components/sections/experience";
+import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/hero";
 import { Navbar } from "@/components/sections/navbar";
-import { Projects } from "@/components/sections/projects";
-import { Resume } from "@/components/sections/resume";
-import { Skills } from "@/components/sections/skills";
-import { useScroll, useSpring, motion } from "framer-motion";
+
+const About = dynamic(() => import("@/components/sections/about").then((mod) => mod.About));
+const Contact = dynamic(() => import("@/components/sections/contact").then((mod) => mod.Contact));
+const Experience = dynamic(() => import("@/components/sections/experience").then((mod) => mod.Experience));
+const Projects = dynamic(() => import("@/components/sections/projects").then((mod) => mod.Projects));
+const Resume = dynamic(() => import("@/components/sections/resume").then((mod) => mod.Resume));
+const Skills = dynamic(() => import("@/components/sections/skills").then((mod) => mod.Skills));
+import { useScroll, useSpring, m } from "framer-motion";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -21,7 +23,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-accent-foreground font-sans">
       {/* Scroll Progress Bar */}
-      <motion.div
+      <m.div
         className="fixed top-0 left-0 right-0 h-1 bg-accent origin-left z-100"
         style={{ scaleX }}
       />

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, Download, Github, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -24,7 +24,7 @@ export function Hero() {
       {/* Content */}
       <div className="container relative z-20 px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -90,12 +90,12 @@ export function Hero() {
                   ))}
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
 
       {/* Decorative Elements */}
-      <motion.div
+      <m.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-muted-foreground text-sm"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 10, 0] }}
@@ -103,7 +103,7 @@ export function Hero() {
       >
         <div className="w-px h-12 bg-linear-to-b from-transparent via-foreground/20 to-foreground"></div>
         <span>Scroll</span>
-      </motion.div>
+      </m.div>
     </section>
   );
 }

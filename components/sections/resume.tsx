@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Download, Eye, FileText } from "lucide-react";
 import Link from "next/link";
@@ -26,7 +26,7 @@ export function Resume() {
       </div>
 
       <div className="container px-6 md:px-12 relative z-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -126,7 +126,7 @@ export function Resume() {
               .pdf
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

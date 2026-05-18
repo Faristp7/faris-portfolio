@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const experiences = [
   {
@@ -26,7 +26,7 @@ export function Experience() {
   return (
     <section id="experience" className="py-24 bg-secondary/20">
       <div className="container px-6 md:px-12 max-w-4xl mx-auto">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -36,11 +36,11 @@ export function Experience() {
           <h2 className="text-3xl md:text-4xl font-display font-bold">
             Where I've Worked
           </h2>
-        </motion.div>
+        </m.div>
 
         <div className="relative border-l border-border ml-4 md:ml-0 space-y-12">
           {experiences.map((exp, index) => (
-            <motion.div
+            <m.div
               key={index}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -63,7 +63,7 @@ export function Experience() {
               <p className="text-muted-foreground leading-relaxed max-w-2xl">
                 {exp.description}
               </p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

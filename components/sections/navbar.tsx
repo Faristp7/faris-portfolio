@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ModeToggle } from "@/components/mode-toggle";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { m, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -30,7 +30,7 @@ export function Navbar() {
   };
 
   return (
-    <motion.header
+    <m.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "py-4" : "py-6"
       }`}
@@ -85,7 +85,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
@@ -105,8 +105,8 @@ export function Navbar() {
               Let's Talk
             </Button>
           </nav>
-        </motion.div>
+        </m.div>
       )}
-    </motion.header>
+    </m.header>
   );
 }

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectArchiveModal } from "../project-archive-modal";
@@ -35,7 +35,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-24 md:py-32">
       <div className="container px-6 md:px-12">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -45,11 +45,11 @@ export function Projects() {
           <h2 className="text-3xl md:text-4xl font-display font-bold">
             Featured Projects
           </h2>
-        </motion.div>
+        </m.div>
 
         <div className="space-y-32">
           {projects.map((project, index) => (
-            <motion.div
+            <m.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -110,7 +110,7 @@ export function Projects() {
                   }
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 

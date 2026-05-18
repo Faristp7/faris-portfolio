@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Layout, Settings, Terminal } from "lucide-react";
 
 const skills = [
@@ -23,7 +23,7 @@ export function Skills() {
   return (
     <section id="skills" className="py-24 bg-secondary/30 border-y border-border/50">
       <div className="container px-6 md:px-12">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -33,11 +33,11 @@ export function Skills() {
           <h2 className="text-3xl md:text-4xl font-display font-bold">
             Technologies I work with
           </h2>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
-            <motion.div
+            <m.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export function Skills() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

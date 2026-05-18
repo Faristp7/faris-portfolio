@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const stats = [
   { label: "Years Experience", value: "2+" },
@@ -12,7 +12,7 @@ export function About() {
       <div className="container px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content: Story */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -45,10 +45,10 @@ export function About() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Right Content: Visual */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -70,7 +70,7 @@ export function About() {
             {/* Decorative elements */}
             <div className="absolute -top-10 -right-10 w-64 h-64 bg-accent/20 rounded-full blur-[100px] -z-10"></div>
             <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -z-10"></div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>
