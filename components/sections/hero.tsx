@@ -74,14 +74,15 @@ export function Hero() {
 
               <div className="flex items-center gap-4 sm:ml-4">
                 {[
-                  { logo: Github, href: "https://github.com/faristp7" },
-                  { logo: Linkedin, href: "https://www.linkedin.com/in/faris-tp" },
-                  { logo: Instagram, href: "https://www.instagram.com/faris_tp_" }].map((Icon, index) => (
+                  { logo: Github, href: "https://github.com/faristp7", name: "GitHub" },
+                  { logo: Linkedin, href: "https://www.linkedin.com/in/faris-tp", name: "LinkedIn" },
+                  { logo: Instagram, href: "https://www.instagram.com/faris_tp_", name: "Instagram" }].map((Icon, index) => (
                     <a
                       key={index}
                       href={Icon.href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={Icon.name}
                       className="w-12 h-12 flex items-center justify-center rounded-full border border-border bg-background/50 backdrop-blur-sm hover:border-accent hover:text-accent transition-all hover:-translate-y-1"
                     >
                       <Icon.logo className="h-5 w-5" />

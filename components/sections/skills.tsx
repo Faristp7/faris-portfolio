@@ -54,7 +54,7 @@ export function Skills() {
                   <skill.icon className="w-6 h-6" />
                 </div>
 
-                <h4 className="text-xl font-display font-bold mb-6">{skill.category}</h4>
+                <h3 className="text-xl font-display font-bold mb-6">{skill.category}</h3>
 
                 <div className="flex flex-wrap gap-2">
                   {skill.items.map((item, i) => (

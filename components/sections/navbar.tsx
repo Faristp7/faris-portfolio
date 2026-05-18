@@ -75,6 +75,7 @@ export function Navbar() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 text-foreground"
+              aria-label={isMobileMenuOpen ? "Close mobile menu" : "Open mobile menu"}
             >
               {isMobileMenuOpen ? <X /> : <Menu />}
             </button>

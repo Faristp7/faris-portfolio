@@ -146,11 +146,11 @@ export function ProjectArchiveModal({ children }: { children: React.ReactNode })
                                         <TableCell className="text-right">
                                             <div className="flex items-center justify-end gap-3">
                                                 {project.github && (
-                                                    <a href={project.github} className="text-muted-foreground hover:text-accent transition-colors">
+                                                    <a href={project.github} className="text-muted-foreground hover:text-accent transition-colors" aria-label="GitHub repository">
                                                         <Github className="w-4 h-4" />
                                                     </a>
                                                 )}
-                                                <a href={project.link} className="text-muted-foreground hover:text-accent transition-colors">
+                                                <a href={project.link} className="text-muted-foreground hover:text-accent transition-colors" aria-label="Live demo">
                                                     <ArrowUpRight className="w-4 h-4" />
                                                 </a>
                                             </div>
