@@ -3,10 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Download, Eye, FileText } from "lucide-react";
 import Link from "next/link";
 
-const RESUME_VIEW_URL =
-  "https://drive.google.com/file/d/1Na7SJwn_DamONSNjHhAWe6G4iHG2dBge/view?usp=sharing";
-const RESUME_DOWNLOAD_URL =
-  "https://drive.google.com/uc?export=download&id=1Na7SJwn_DamONSNjHhAWe6G4iHG2dBge";
+const RESUME_VIEW_URL = "/resume.pdf";
+const RESUME_DOWNLOAD_URL = "/resume.pdf";
 
 const highlights = [
   { label: "Years Experience", value: "3+" },
@@ -97,6 +95,7 @@ export function Resume() {
                       href={RESUME_DOWNLOAD_URL}
                       target="_blank"
                       rel="noopener noreferrer"
+                      download
                     >
                       <Download className="w-4 h-4" />
                       Download PDF

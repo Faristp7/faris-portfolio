@@ -63,9 +63,10 @@ export function Hero() {
                 className="h-14 px-8 text-lg rounded-full hover:-translate-y-1 transition-transform"
               >
                 <Link
-                  href="https://drive.google.com/uc?export=download&id=1-dE8gPUAiaIsb_1ygmgoK73w4oNzRYu4"
+                  href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
+                  download
                 >
                   <Download className="mr-2 h-5 w-5" />
                   Resume
