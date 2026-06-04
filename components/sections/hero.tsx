@@ -38,8 +38,8 @@ export function Hero() {
             </div>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[0.9] tracking-tighter mb-8 text-transparent bg-clip-text bg-gradient-to-b from-foreground to-foreground/50">
-              Building the <br />
-              <span className="text-stroke-thin md:text-stroke hover:text-accent transition-colors duration-500 cursor-default">Future</span> of Digital
+              Full-Stack <br />
+              <span className="text-stroke-thin md:text-stroke hover:text-accent transition-colors duration-500 cursor-default">Developer</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10">

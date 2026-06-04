@@ -1,4 +1,5 @@
 import { m } from "framer-motion";
+import Image from "next/image";
 
 const stats = [
   { label: "Years Experience", value: "2+" },
@@ -56,10 +57,13 @@ export function About() {
             className="relative"
           >
             <div className="relative z-10 rounded-2xl overflow-hidden border border-white/10 bg-linear-to-br from-white/5 to-white/0 backdrop-blur-sm shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
-              <img
-                src={"/chatGptHeroImg.png"}
-                alt="Developer Avatar"
+              <Image
+                src="/chatGptHeroImg.png"
+                alt="Faris - Full Stack Developer in Dubai"
+                width={600}
+                height={600}
                 className="w-full h-auto object-cover bg-linear-to-b from-accent/10 to-background"
+                priority
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-black/80 to-transparent text-white">
                 <p className="font-mono text-xs opacity-70 mb-1">CURRENTLY WORKING AT</p>

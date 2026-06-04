@@ -3,6 +3,7 @@ import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectArchiveModal } from "../project-archive-modal";
 import Link from "next/link";
+import Image from "next/image";
 
 
 const projects = [
@@ -17,7 +18,7 @@ const projects = [
   {
     title: "Thrifty",
     category: "Web Application",
-    description: "A premium shopping experience mobile app with AR try-on features, seamless checkout, and personalized recommendations.",
+    description: "A high-performance car rental booking platform in the UAE, featuring live fleet updates, pricing integrations, and seamless booking flows.",
     tech: ["Next.js", "Node.js", "MongoDB", "Tailwind CSS", "Shadcn UI", "TanStack Query"],
     image: "/thrifty.jpg",
     link: "https://www.thriftyuae.com",
@@ -62,9 +63,11 @@ export function Projects() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 to-primary/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                 <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl bg-card">
                   <div className="absolute inset-0 bg-accent/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                  <img
+                  <Image
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} - Full Stack Web Application`}
+                    width={800}
+                    height={500}
                     className="w-full h-auto transform group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                 </div>

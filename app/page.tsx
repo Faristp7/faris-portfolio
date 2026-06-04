@@ -1,15 +1,13 @@
 "use client"
 
-import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/hero";
 import { Navbar } from "@/components/sections/navbar";
-
-const About = dynamic(() => import("@/components/sections/about").then((mod) => mod.About));
-const Contact = dynamic(() => import("@/components/sections/contact").then((mod) => mod.Contact));
-const Experience = dynamic(() => import("@/components/sections/experience").then((mod) => mod.Experience));
-const Projects = dynamic(() => import("@/components/sections/projects").then((mod) => mod.Projects));
-const Resume = dynamic(() => import("@/components/sections/resume").then((mod) => mod.Resume));
-const Skills = dynamic(() => import("@/components/sections/skills").then((mod) => mod.Skills));
+import { About } from "@/components/sections/about";
+import { Contact } from "@/components/sections/contact";
+import { Experience } from "@/components/sections/experience";
+import { Projects } from "@/components/sections/projects";
+import { Resume } from "@/components/sections/resume";
+import { Skills } from "@/components/sections/skills";
 import { useScroll, useSpring, m } from "framer-motion";
 
 export default function Home() {
@@ -45,7 +43,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "Person",
             name: "Faris",
-            url: "https://faris-portfolio.vercel.app",
+            url: "https://faris.co.in",
             jobTitle: "Full Stack Developer",
             description:
               "Full Stack Developer based in Dubai, UAE, specializing in React, Next.js, TypeScript, and Node.js.",

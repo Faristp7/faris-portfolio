@@ -180,7 +180,7 @@ export default function Image() {
             display: "flex",
           }}
         >
-          faris-portfolio.vercel.app
+          faris.co.in
         </div>
       </div>
     ),
