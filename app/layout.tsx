@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Inter, Syne, JetBrains_Mono } from "next/font/google";
+import { Inter, Geist, JetBrains_Mono, Instrument_Serif } from "next/font/google";
 import { Providers } from "@/components/providers";
 import { Metadata } from "next";
 
@@ -9,7 +9,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const syne = Syne({
+const geist = Geist({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
@@ -19,6 +19,14 @@ const mono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  display: "swap",
+  style: ["normal", "italic"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -106,7 +114,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${mono.variable} ${syne.variable} antialiased`}
+        className={`${inter.variable} ${mono.variable} ${geist.variable} ${instrumentSerif.variable} antialiased`}
       >
         <Providers>{children}</Providers>
       </body>
