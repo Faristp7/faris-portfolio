@@ -7,7 +7,7 @@ const RESUME_VIEW_URL = "/resume.pdf";
 const RESUME_DOWNLOAD_URL = "/resume.pdf";
 
 const highlights = [
-  { label: "Years Experience", value: "3+" },
+  { label: "Years Experience", value: "2+" },
   { label: "Projects Shipped", value: "5+" },
   { label: "Technologies", value: "15+" },
 ];
@@ -64,7 +64,7 @@ export function Resume() {
                   </div>
 
                   <p className="text-muted-foreground leading-relaxed max-w-md mb-8">
-                    3+ years of full-stack experience building production-grade
+                    2+ years of full-stack experience building production-grade
                     web applications for clients across Dubai. Specialized in
                     React, Next.js, Node.js, and TypeScript.
                   </p>

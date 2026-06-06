@@ -1,5 +1,5 @@
 import { m } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRightCircle, ArrowUpRight } from "lucide-react";
 import { ProjectArchiveModal } from "../project-archive-modal";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,7 +17,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    number: "01",
+    number: "02",
     title: "Dollar UAE",
     category: "Web Application",
     description: "A seamless car rental app for Dubai, letting users book, manage, and track rentals with ease.",
@@ -26,16 +26,16 @@ const projects: Project[] = [
     link: "https://dollaruae.com",
   },
   {
-    number: "02",
+    number: "03",
     title: "Thrifty",
     category: "Web Application",
     description: "A high-performance car rental booking platform in the UAE, featuring live fleet updates, pricing integrations, and seamless booking flows.",
-    tech: ["Next.js", "Node.js", "MongoDB", "Tailwind CSS", "Shadcn UI", "TanStack Query"],
+    tech: ["Node.js", "MongoDB", "Shadcn UI", "TanStack Query"],
     image: "/thrifty.jpg",
     link: "https://www.thriftyuae.com",
   },
   {
-    number: "03",
+    number: "04",
     title: "PVS",
     category: "Web Application",
     description: "AI-powered data visualization tool for enterprise clients to process and interpret large datasets with predictive modeling.",
@@ -91,14 +91,80 @@ export function Projects() {
           </h2>
         </m.div>
 
-        {/* 3-column horizontal grid layout */}
+        {/* 4-column horizontal grid layout */}
         <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
         >
+          {/* Cinematic Video Showcase Card (01) */}
+          <m.div
+            variants={cardVariants}
+            onMouseEnter={() => setHoveredIndex(projects.length)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            whileHover={{
+              y: -8,
+              borderColor: "rgba(222, 219, 200, 0.25)",
+              boxShadow: "0 0 30px 2px rgba(222, 219, 200, 0.03)"
+            }}
+            animate={{
+              opacity: hoveredIndex !== null && hoveredIndex !== projects.length ? 0.45 : 1,
+              scale: hoveredIndex === projects.length ? 1.01 : 1
+            }}
+            transition={{
+              y: { duration: 0.4, ease: [0.25, 1, 0.5, 1] },
+              opacity: { duration: 0.4 },
+              scale: { duration: 0.4, ease: [0.25, 1, 0.5, 1] }
+            }}
+            className="relative overflow-hidden rounded-2xl border border-[#1A1A1A] h-[580px] bg-black flex flex-col justify-between group cursor-pointer"
+          >
+            {/* Video element filling the card */}
+            <div className="absolute inset-0 z-0">
+              <video
+                src="/project-video.mp4"
+                poster="/project-video-frame.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              {/* Cinematic dark linear gradient overlay for readability and blend */}
+              <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-black/10 z-10" />
+            </div>
+
+            {/* Card Content Overlay */}
+            <div className="relative z-20 p-6 h-full flex flex-col justify-between pointer-events-none">
+              {/* Top: Category & Index */}
+              
+
+              {/* Bottom: Title & Description */}
+              <div className="mt-auto">
+                <h3 className="text-2xl font-display font-bold text-white tracking-tight mb-2 group-hover:text-accent transition-colors duration-300">
+                  Projects
+                </h3>
+                <ArrowRightCircle className="w-10 h-10 text-accent"/>
+              </div>
+            </div>
+
+            {/* Play/Pause/Status indicator on hover in bottom-right */}
+            <m.div
+              className="absolute bottom-6 right-6 w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-black/40 backdrop-blur-md z-20 pointer-events-none"
+              variants={{
+                initial: { opacity: 0, scale: 0.8, x: -10 },
+                hover: { opacity: 1, scale: 1, x: 0 }
+              }}
+              animate={hoveredIndex === projects.length ? "hover" : "initial"}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="w-2.5 h-2.5 bg-accent rounded-full animate-ping absolute" />
+              <div className="w-2 h-2 bg-accent rounded-full relative z-30" />
+            </m.div>
+          </m.div>
+
+          {/* Projects Mapping (02, 03, 04) */}
           {projects.map((project, index) => {
             const isHovered = hoveredIndex === index;
             const isAnyHovered = hoveredIndex !== null;
