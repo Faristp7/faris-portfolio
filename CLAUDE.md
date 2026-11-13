@@ -15,29 +15,16 @@ There is no test suite.
 
 ## Architecture
 
-Single-page portfolio built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS v4**.
+Single-page portfolio on **Next.js 16 (App Router)**, **React 19**, **TypeScript**. It is a port of a hand-written static site (`../index.html`, `../css/styles.css`, `../js/*.js`) and must render identically to it.
 
-### Page structure
-
-`app/page.tsx` is a `"use client"` component (required for Framer Motion's `useScroll`/`useSpring`). It renders sections in order: `Navbar → Hero → About → Skills → Projects → Experience → Contact`. A fixed scroll-progress bar sits above everything.
-
-`app/layout.tsx` sets up metadata, three Google Fonts (Inter/Syne/JetBrains Mono), and wraps children in `<Providers>` (ThemeProvider + TooltipProvider + Toaster).
-
-### Component layers
-
-- `components/sections/` — The seven portfolio sections. **Content data (projects, experience entries) is hardcoded inside each section file**, not in a separate data layer.
-- `components/` — Feature components: `ContactModal` (dialog with react-hook-form + zod, currently mock submission), `ProjectArchiveModal` (searchable table of all projects), `ModeToggle`, `ThemeProvider`, `Providers`.
-- `components/ui/` — shadcn/ui primitives; treat as third-party.
-- `lib/utils.ts` — Exports only `cn()` (clsx + tailwind-merge).
+- `app/page.tsx`: a server component that composes the page from `components/site/*`, then renders `<Experience />` last.
+- `components/site/`: one file per part of the original `index.html` body (sprite, loader, rooms, dock, menu, scene (hero + 01 About), skills, projects, experience (`ExperienceChapter`), resume, contact, footer, case-studies, hello, cursor, toast). This is plain server-rendered markup with no state or handlers. Classes, ids, `data-*`, `aria-*` and whitespace between inline elements (`{" "}`) mirror the static HTML exactly. The behaviour code looks elements up by those attributes, so keep them in step. Images are plain `<img>`/`<video>` (not `next/image`), with root-absolute paths (`/assets/...`, `/resume.pdf`), including paths in `data-src`.
+- `components/experience.tsx` (`"use client"`): starts the behaviour in `lib/experience/*` (a port of `js/main.js` + `js/rooms.js`: GSAP, ScrollTrigger, Lenis) in a `useEffect`.
+- `app/layout.tsx`: metadata/viewport through the Metadata API, preloads through `react-dom`'s `preload()`, the pre-paint inline script (adds `js`/`motion`/`is-loading`/`is-entered` classes to `<html>`, hence `suppressHydrationWarning`) and the JSON-LD.
+- `app/robots.ts` and `app/sitemap.ts` mirror the static `robots.txt` / `sitemap.xml`.
 
 ### Styling
 
-Tailwind CSS v4 syntax is used: `globals.css` starts with `@import "tailwindcss"` (not `@tailwind` directives). CSS variables for the design system are defined in `:root` / `.dark` blocks in `globals.css`. Custom utility classes (`.text-gradient`, `.glass`, `.glass-card`, `.neo-brutal`, `.text-stroke`) are defined there too.
+`app/globals.css` is the static design's `styles.css` verbatim, with only its `url()`s made root-absolute. **There is no Tailwind on the page.** Do not add `@import "tailwindcss"`, because its preflight would change the design. `postcss.config.mjs` still lists `@tailwindcss/postcss`, which does nothing without the import. The font (Jost) is self-hosted at `public/fonts/jost.woff2`.
 
-Font variables: `--font-sans` (Inter), `--font-display` (Syne), `--font-mono` (JetBrains Mono). Use `font-display` for headings, `font-mono` for labels/tags.
-
-The accent color is an electric green (`hsl(142 76% 36%)` light / `hsl(142 70% 50%)` dark). Default theme is light; the `ThemeProvider` stores preference in `localStorage` under key `vite-ui-theme`.
-
-### SEO
-
-`app/sitemap.ts` and `app/robots.ts` generate dynamic sitemap and robots.txt. JSON-LD Person schema is inlined in `page.tsx`. The production URL placeholder is `https://faris-portfolio.vercel.app`.
+`components/ui/` and `hooks/` hold leftover shadcn/ui primitives that the page doesn't use. Treat them as third-party.

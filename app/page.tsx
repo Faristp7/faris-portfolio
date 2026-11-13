@@ -1,83 +1,60 @@
-"use client"
+import { Experience } from "@/components/experience";
+import { CaseStudies } from "@/components/site/case-studies";
+import { Contact } from "@/components/site/contact";
+import { Cursor } from "@/components/site/cursor";
+import { Dock } from "@/components/site/dock";
+import { ExperienceChapter } from "@/components/site/experience";
+import { Footer } from "@/components/site/footer";
+import { Hello } from "@/components/site/hello";
+import { Loader } from "@/components/site/loader";
+import { Menu } from "@/components/site/menu";
+import { Projects } from "@/components/site/projects";
+import { Resume } from "@/components/site/resume";
+import { Rooms } from "@/components/site/rooms";
+import { Scene } from "@/components/site/scene";
+import { Skills } from "@/components/site/skills";
+import { Sprite } from "@/components/site/sprite";
+import { Toast } from "@/components/site/toast";
 
-import { Hero } from "@/components/sections/hero";
-import { Navbar } from "@/components/sections/navbar";
-import { About } from "@/components/sections/about";
-import { Contact } from "@/components/sections/contact";
-import { Experience } from "@/components/sections/experience";
-import { Projects } from "@/components/sections/projects";
-import { Resume } from "@/components/sections/resume";
-import { Skills } from "@/components/sections/skills";
-import { useScroll, useSpring, m } from "framer-motion";
-
+/* The whole page, server-rendered as static markup (a port of the static site's index.html body).
+   Behaviour (loader, the travelling dot, scroll scenes, dialogs, form) is attached on the client by
+   <Experience />, which finds these elements by their classes, ids and data-* attributes, so the
+   markup in components/site must stay attribute-for-attribute in step with what it expects. */
 export default function Home() {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-accent-foreground font-sans">
-      {/* Scroll Progress Bar */}
-      <m.div
-        className="fixed top-0 left-0 right-0 h-1 bg-accent origin-left z-100"
-        style={{ scaleX }}
-      />
+    <>
+      <Sprite />
+      {" "}
+      <a className="skip" href="#main">Skip to content</a>
 
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
+      <Loader />
+
+      <Rooms />
+
+      <Dock />
+
+      <Menu />
+
+      <main id="main">
+        <Scene />
         <Skills />
         <Projects />
-        <Experience />
+        <ExperienceChapter />
         <Resume />
         <Contact />
       </main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Faris",
-            url: "https://faris.co.in",
-            jobTitle: "Full Stack Developer",
-            description:
-              "Full Stack Developer based in Dubai, UAE, specializing in React, Next.js, TypeScript, and Node.js.",
-            knowsAbout: [
-              "React",
-              "Next.js",
-              "TypeScript",
-              "Node.js",
-              "MongoDB",
-              "PostgreSQL",
-              "Docker",
-              "AWS",
-              "UI/UX Design",
-              "Framer Motion",
-              "TanStack Query",
-            ],
-            worksFor: {
-              "@type": "Organization",
-              name: "Accore Labs",
-            },
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Dubai",
-              addressCountry: "AE",
-            },
-            sameAs: [
-              "https://github.com/faristp7",
-              "https://www.linkedin.com/in/faris-tp",
-              "https://x.com/faristp07",
-              "https://www.instagram.com/faris_tp_",
-            ],
-          }),
-        }}
-      />
-    </div>
+
+      <Footer />
+
+      <CaseStudies />
+
+      <Hello />
+
+      <Cursor />
+
+      <Toast />
+
+      <Experience />
+    </>
   );
 }
